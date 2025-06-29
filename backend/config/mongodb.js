@@ -7,7 +7,7 @@ const connectDB= async()=>{
         })
         await mongoose.connect(`${process.env.MONGODB_URI}/e-commerce`)
     } catch (err) {
-        
+        console.err(err)
     }
 }
 export default connectDB;
