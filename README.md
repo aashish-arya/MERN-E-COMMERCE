@@ -1,5 +1,7 @@
 # MERN E-Commerce Platform
 
+&#x20;
+
 A full-stack e-commerce application that enables users to browse products, manage a shopping cart, and complete secure checkouts. It solves the common problem of shopping without visiting physical stores by providing an online platform where users can easily search for products, register or log in, and place orders. This application includes user authentication with JWT, product listings with filtering options, and order history tracking, all within a responsive interface that works on both mobile and desktop devices.
 
 ---
@@ -46,25 +48,25 @@ npm start
 
 ### 🔐 Environment Variables
 
-**Backend (**\`\`**)**
+**Backend**
 
 ```env
-MONGODB_URI=""
-CLOUDINARY_API_KEY=""
-CLOUDINARY_SECRET_KEY=""
-CLOUDINARY_NAME=""
-JWT_SECRET=""
-ADMIN_EMAIL=""
-ADMIN_PASSWORD=""
-STRIPE_SECRET_KEY=""
-RAZORPAY_KEY_ID=""
+MONGODB_URI=""  
+CLOUDINARY_API_KEY=""  
+CLOUDINARY_SECRET_KEY=""  
+CLOUDINARY_NAME=""  
+JWT_SECRET=""  
+ADMIN_EMAIL=""  
+ADMIN_PASSWORD=""  
+STRIPE_SECRET_KEY=""  
+RAZORPAY_KEY_ID=""  
 RAZORPAY_KEY_SECRET=""
 ```
 
-**Frontend (**\`\`**)**
+**Frontend**
 
 ```env
-VITE_BACKEND_URL=""
+VITE_BACKEND_URL=""  
 VITE_RAZORPAY_KEY_ID=""
 ```
 
@@ -72,8 +74,8 @@ VITE_RAZORPAY_KEY_ID=""
 
 ## 🌐 Live Demo
 
-- 🛍️ **User Site:** (https://mern-e-commerce-frontend-delta.vercel.app/)
-- 🛠️ **Admin Panel:** (https://mern-e-commerce-admin-theta.vercel.app/)
+- 🛍️ **User Site:** [https://mern-e-commerce-frontend-delta.vercel.app/](https://mern-e-commerce-frontend-delta.vercel.app/)
+- 🛠️ **Admin Panel:** [https://mern-e-commerce-admin-theta.vercel.app/](https://mern-e-commerce-admin-theta.vercel.app/)
 
 ---
 
@@ -107,9 +109,9 @@ VITE_RAZORPAY_KEY_ID=""
 ## 👨‍💻 Author
 
 **Aashish Kumar Arya**\
-📧 Email: (ashisharya9058@gmail.com)
-💼 GitHub: (https://github.com/aashish-arya)
-🔗 LinkedIn: *(Add your LinkedIn link here if available)*
+📧 Email: [ashisharya9058@gmail.com](mailto\:ashisharya9058@gmail.com)\
+💼 GitHub: [https://github.com/aashish-arya](https://github.com/aashish-arya)\
+🔗 LinkedIn: [https://www.linkedin.com/in/aashish-arya-34065433a/](https://www.linkedin.com/in/aashish-arya-34065433a/)
 
 ---
 
