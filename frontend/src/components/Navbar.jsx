@@ -1,69 +1,85 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { assets } from '../assets/assets'
 import { NavLink, Link } from 'react-router-dom'
 import { shopContext } from '../context/shopContext'
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(shopContext);
-  const [dropdown, setDropdown] = useState(false)
+  const [dropdown, setDropdown] = useState(false);
+  const dropdownRef = useRef();
+
   const logout = async () => {
     navigate('/login')
     localStorage.removeItem('token')
     setToken('')
     setCartItems({})
   }
+  useEffect(() => {
+    const handleClickoutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdown(false)
+      };
+    }
+    document.addEventListener('mousedown', handleClickoutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickoutside)
+    }
+  }, [])
+
   return (
     <div className=' flex items-center justify-between py-5 font-medium '>
       <Link to='/'><img src={assets.logo} className='w-36' alt="" /></Link>
 
       <ul className=' hidden sm:flex gap-5 text-sm text-gray-700'>
 
-        <NavLink to='/' className="flex flex-col items-center gap-1">
+        <NavLink onClick={() => setHidden(false)} to='/' className="flex flex-col items-center gap-1">
           <p>HOME</p>
           <hr className='bg-gray-700 h-[1.5px] w-1/2 border-none hidden' />
         </NavLink>
 
-        <NavLink to='/collection' className="flex flex-col items-center gap-1">
+        <NavLink onClick={() => setHidden(true)} to='/collection' className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
           <hr className='bg-gray-700 h-[1.5px] w-1/2 border-none hidden' />
         </NavLink>
 
-        <NavLink to='/about' className="flex flex-col items-center gap-1">
+        <NavLink onClick={() => setHidden(false)} to='/about' className="flex flex-col items-center gap-1">
           <p>ABOUT</p>
           <hr className='bg-gray-700 h-[1.5px] w-1/2 border-none hidden' />
         </NavLink>
 
-        <NavLink to='/contact' className="flex flex-col items-center gap-1">
+        <NavLink onClick={() => setHidden(false)} to='/contact' className="flex flex-col items-center gap-1">
           <p>CONTACT</p>
           <hr className='bg-gray-700 h-[1.5px] w-1/2 border-none hidden' />
         </NavLink>
 
       </ul>
       <div className=" flex items-center gap-6">
-        <img onClick={() => { setShowSearch(true) }} src={assets.search_icon} className='w-5 cursor-pointer' alt="" />
+        {hidden ? <img onClick={() => { setShowSearch(true) }} src={assets.search_icon} className='w-5 cursor-pointer' alt="" /> : null}
+
 
         <div className='group relative'>
           <img onClick={() => {
-            if(!token){
+            if (!token) {
               navigate('/login')
             }
-            else{
+            else {
               setDropdown(!dropdown)
             }
-            }} src={assets.profile_icon} className='w-5 cursor-pointer' alt="" />
+          }} src={assets.profile_icon} className='w-5 cursor-pointer' alt="" />
           {/* Dropdown menu */}
-          {token && 
-          <div className={`group-hover:block ${dropdown&&token ?"block": 'hidden'} absolute dropdown-menu right-0 pt-4`}>
+          {token &&
+            <div ref={dropdownRef} className={`group-hover:block ${dropdown && token ? "block" : 'hidden'} absolute dropdown-menu right-0 pt-4`}>
 
-            <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
+              <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
 
-              {/* <p className='cursor-pointer hover:text-black'>My Profile</p> */}
-              <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
-              <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+                {/* <p className='cursor-pointer hover:text-black'>My Profile</p> */}
+                <p onClick={() => navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
+                <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
 
-            </div>
-          </div>}
+              </div>
+            </div>}
 
         </div>
         <Link to="/cart" className='relative'>
