@@ -158,41 +158,41 @@ It consists of:
 
 - **User Storefront – Home Page**
   
-  ![User Home](./screenshots/user home.png)
+  ![User Home](./screenshots/user_home.png)
 
 - **User Storefront – Home Page (Products Section)**
   
-  ![Home Page Products](./screenshots/home page products.png)
+  ![Home Page Products](./screenshots/home_page_products.png)
 
 - **User Storefront – Collection / Filtered Products**
   
-  ![Collection Page](./screenshots/collection page.png)
+  ![Collection Page](./screenshots/collection_page.png)
   
-  ![Filtered Products](./screenshots/filtered products.png)
+  ![Filtered Products](./screenshots/filtered_products.png)
 
 - **User Storefront – Product Details Page**
   
-  ![Product Description](./screenshots/product description.png)
+  ![Product Description](./screenshots/product_description.png)
 
 - **User Storefront – Cart & Checkout Flow**
   
   ![Cart](./screenshots/cart.png)
   
-  ![Place Order](./screenshots/place order.png)
+  ![Place Order](./screenshots/place_order.png)
   
   ![Stripe Checkout](./screenshots/stripe.png)
 
 - **User Storefront – My Orders**
   
-  ![My Orders](./screenshots/my orders.png)
+  ![My Orders](./screenshots/my_orders.png)
 
 - **Admin Panel – Products & Orders**
   
-  ![Admin Add Products](./screenshots/admin-add products.png)
+  ![Admin Add Products](./screenshots/admin_add_products.png)
   
-  ![Admin All Products](./screenshots/admin-all products.png)
+  ![Admin All Products](./screenshots/admin_all_products.png)
   
-  ![Admin Order Status](./screenshots/admin-order status.png)
+  ![Admin Order Status](./screenshots/admin_order_status.png)
 
   ---
 
@@ -256,18 +256,18 @@ High‑level structure (current project layout):
 │     └─ admin_assets/         # Admin demo assets
 │
 ├─ screenshots/                # Project screenshots used in README
-│  ├─ user home.png
-│  ├─ home page products.png
-│  ├─ collection page.png
-│  ├─ filtered products.png
-│  ├─ product description.png
+│  ├─ user_home.png
+│  ├─ home_page_products.png
+│  ├─ collection_page.png
+│  ├─ filtered_products.png
+│  ├─ product_description.png
 │  ├─ cart.png
-│  ├─ place order.png
+│  ├─ place_order.png
 │  ├─ stripe.png
-│  ├─ my orders.png
-│  ├─ admin-add products.png
-│  ├─ admin-all products.png
-│  └─ admin-order status.png
+│  ├─ my_orders.png
+│  ├─ admin_add_products.png
+│  ├─ admin_all_products.png
+│  └─ admin_order_status.png
 │
 └─ README.md                   # Project documentation (this file)
 ```
