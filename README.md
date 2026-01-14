@@ -288,7 +288,7 @@ High‑level structure (current project layout):
   ### 7.2 Clone the Repository
 
   ```bash
-  git clone <your-repo-url>
+  git clone [<your-repo-url>](https://github.com/aashish-arya/MERN-E-COMMERCE.git)
   cd E-Commerce-App
   ```
 
